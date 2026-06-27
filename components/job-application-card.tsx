@@ -36,6 +36,7 @@ export default function JobApplicationCard({job, columns, dragHandleProps, }: Jo
         try {
             const result = await updateJobApplication(job._id, {
                 ...formData,
+                salary: String(formData.salary),
                 tags: formData.tags
                 .split(",")
                 .map((tag) => tag.trim())
